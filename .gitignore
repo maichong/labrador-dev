@@ -35,3 +35,11 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+tmp/
+test/
+al*
+labrador*
+.idea
+demo/.build
+demo/dist
