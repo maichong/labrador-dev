@@ -2,21 +2,27 @@ import wx from 'labrador';
 import List from '../../components/list/list';
 import Title from '../../components/title/title';
 import Counter from '../../components/counter/counter';
+import {getStore,connect} from 'labrador-redux';
+import * as action from '../../utils/action';
 
-export default class Index extends wx.Component {
+const store = getStore();
+
+class Index extends wx.Component {
   data = {
     userInfo: {},
     mottoTitle: 'Hello World',
-    count: 0
+    count: 0,
+    redux:'REDUX_TITLE'
   };
 
   children = {
     list: new List(),
-    motto: new Title({ text: '@mottoTitle', hello: '@mottoTitle' }),
-    counter: new Counter({ count: '@count', onChange: '#handleCountChange' })
+    motto: new Title({ text: '@redux', hello: '@mottoTitle' }),
+    counter: new Counter({ count: '@count', onChange: this.handleCountChange.bind(this) })
   };
 
   handleCountChange(count) {
+    console.log('count,----',count,this);
     this.setData({ count });
   }
 
@@ -38,8 +44,12 @@ export default class Index extends wx.Component {
       console.error(error.stack);
     }
   }
-
+  onReduxHandle(e){
+    let num = parseInt(Math.random() * 10);
+    store.dispatch(action.redux(num));
+  }
   onReady() {
     this.setData('mottoTitle', 'Labrador');
   }
 }
+export default connect(({redux})=>({redux}))(Index);
