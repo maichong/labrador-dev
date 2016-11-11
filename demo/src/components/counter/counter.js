@@ -31,6 +31,8 @@ export default class Counter extends Component {
   }
 
   handleTap() {
+    console.log('counter tap');
+    console.log('this.props',this.props);
     let count = this.props.count + 1;
     if (this.props.onChange) {
       this.props.onChange(count);

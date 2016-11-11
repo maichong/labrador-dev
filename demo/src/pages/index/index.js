@@ -4,12 +4,15 @@ import wx, { Component } from 'labrador';
 import List from '../../components/list/list';
 import Title from '../../components/title/title';
 import Counter from '../../components/counter/counter';
+import { getStore, connect } from 'labrador-redux';
+import * as action from '../../utils/action';
 
 export default class Index extends Component {
   state = {
     userInfo: {},
     mottoTitle: 'Hello World',
-    count: 0
+    count: 0,
+    redux: 'REDUX_TITLE'
   };
 
   children() {
@@ -42,6 +45,11 @@ export default class Index extends Component {
     }
   }
 
+  onReduxHandle(e) {
+    let num = parseInt(Math.random() * 10);
+    store.dispatch(action.redux(num));
+  }
+
   onReady() {
     console.log('onReady');
     //this.setData('mottoTitle', 'Labrador');
@@ -63,3 +71,4 @@ export default class Index extends Component {
     });
   }
 }
+export default connect(({ redux })=>({ redux }))(Index);
