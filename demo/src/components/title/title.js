@@ -1,29 +1,33 @@
-import wx from 'labrador';
-import randomColor  from '../../utils/random-color';
+// @flow
 
-const { string } = wx.PropTypes;
+import { Component, PropTypes } from 'labrador';
+import randomColor from '../../utils/random-color';
 
-export default class Title extends wx.Component {
+const { string } = PropTypes;
 
-  propTypes = {
+export default class Title extends Component {
+
+  static propTypes = {
     text: string
   };
 
-  props = {
+  static defaultProps = {
     text: ''
   };
 
-  data = {
+  state = {
     text: '',
     color: randomColor()
   };
 
-  onUpdate(props) {
-    this.setData('text', props.text);
+  onUpdate(props: $DataMap) {
+    this.setState({
+      text: props.text
+    });
   }
 
   handleTap() {
-    this.setData({
+    this.setState({
       color: randomColor()
     });
   }

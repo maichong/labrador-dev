@@ -1,9 +1,11 @@
-function formatNumber(n) {
-  n = n.toString();
-  return n[1] ? n : '0' + n;
+// @flow
+
+function formatNumber(n: number): string {
+  let s = n.toString();
+  return s[1] ? s : '0' + s;
 }
 
-export function formatTime(date) {
+export function formatTime(date: Date): string {
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
   let day = date.getDate();
@@ -14,10 +16,10 @@ export function formatTime(date) {
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
 }
 
-export function sleep(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
+export function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export function add(a, b) {
+export function add(a: number, b: number): number {
   return a + b;
 }

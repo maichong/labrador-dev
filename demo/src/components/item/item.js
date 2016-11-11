@@ -1,20 +1,24 @@
-import wx from 'labrador';
+// @flow
 
-const { func, string, bool } = wx.PropTypes;
+import { Component, PropTypes } from 'labrador';
 
-export default class Item extends wx.Component {
+const { func, string, bool } = PropTypes;
 
-  propTypes = {
+export default class Item extends Component {
+
+  static propTypes = {
     title: string,
     isNew: bool,
     onChange: func.isRequired
   };
 
-  onUpdate(props) {
-    this.setData({
-      title: props.title,
-      cls: props.isNew ? 'item-new' : ''
-    });
+  constructor(props) {
+    super(props);
+    this.state = props;
+  }
+
+  onUpdate(props: $DataMap) {
+    this.setState(props);
   }
 
   handleTap() {

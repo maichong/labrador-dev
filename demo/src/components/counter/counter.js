@@ -1,30 +1,32 @@
-import wx from 'labrador';
+// @flow
 
-const { number, func } = wx.Types;
+import wx, { Component, PropTypes } from 'labrador';
 
-export default class Counter extends wx.Component {
+const { number, func } = PropTypes;
+
+export default class Counter extends Component {
 
   //属性类型
-  propTypes = {
+  static propTypes = {
     count: number,
     onChange: func.isRequired
   };
 
   //默认属性值
-  props = {
+  static defaultProps = {
     count: 0
   };
 
-  //默认data数据
-  data = {
+  //初始state数据
+  state = {
     num: 0
   };
 
   //监听props值的改变
-  onUpdate(props) {
-    if (props.count !== this.props.count) {
+  onUpdate(nextProps: $DataMap) {
+    if (nextProps.count !== this.props.count) {
       //props.count 值发生了变化，更新data
-      this.setData({ num: props.count * 2 });
+      this.setState({ num: nextProps.count * 2 });
     }
   }
 
