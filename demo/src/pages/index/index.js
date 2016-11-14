@@ -6,8 +6,8 @@ import Title from '../../components/title/title';
 import Counter from '../../components/counter/counter';
 import { getStore, connect } from 'labrador-redux';
 import * as action from '../../utils/action';
-
-export default class Index extends Component {
+const store = getStore();
+class Index extends Component {
   state = {
     userInfo: {},
     mottoTitle: 'Hello World',
