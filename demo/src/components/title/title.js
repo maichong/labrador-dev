@@ -15,10 +15,13 @@ export default class Title extends Component {
     text: ''
   };
 
-  state = {
-    text: '',
-    color: randomColor()
-  };
+  constructor(props: $DataMap) {
+    super(props);
+    this.state = {
+      text: props.text,
+      color: randomColor()
+    };
+  }
 
   onUpdate(props: $DataMap) {
     this.setState({

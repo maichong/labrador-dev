@@ -12,9 +12,9 @@ export default class Item extends Component {
     onChange: func.isRequired
   };
 
-  constructor(props) {
+  constructor(props: $DataMap) {
     super(props);
-    this.state = props;
+    this.state = props || {};
   }
 
   onUpdate(props: $DataMap) {

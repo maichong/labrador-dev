@@ -27,7 +27,7 @@ class Index extends Component {
       },
       counter: {
         component: Counter,
-        props: { count }
+        props: { count, onChange: this.handleCountChange }
       }
     };
   }
@@ -38,8 +38,7 @@ class Index extends Component {
       //调用应用实例的方法获取全局数据
       let userInfo = await wx.app.getUserInfo();
       //更新数据
-      this.setData({ userInfo });
-      this.update();
+      this.setState({ userInfo });
     } catch (error) {
       console.error(error.stack);
     }
@@ -52,7 +51,7 @@ class Index extends Component {
 
   onReady() {
     console.log('onReady');
-    //this.setData('mottoTitle', 'Labrador');
+    //this.setState('mottoTitle', 'Labrador');
 
     console.dir(this);
     this.setState({
@@ -60,9 +59,9 @@ class Index extends Component {
     });
   }
 
-  handleCountChange(count: number) {
-    this.setData({ count });
-  }
+  handleCountChange = (count: number) => {
+    this.setState({ count });
+  };
 
   //事件处理函数
   handleViewTap() {
@@ -71,4 +70,5 @@ class Index extends Component {
     });
   }
 }
-export default connect(({ redux })=>({ redux }))(Index);
+
+export default connect(({ redux }) => ({ redux }))(Index);

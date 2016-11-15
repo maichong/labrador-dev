@@ -20,7 +20,7 @@ export default class List extends Component {
         component: Title,
         props: { text: 'The List Title' }
       },
-      listItems: this.state.items.map((item) => ({
+      items: this.state.items.map((item) => ({
         component: Item,
         key: item.title,
         props: { title: item.title, isNew: item.isNew, onChange: (value) => this.handleChange(item, value) }

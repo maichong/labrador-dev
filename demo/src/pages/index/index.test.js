@@ -10,7 +10,7 @@ export async function handleViewTap(c, next) {
 
 export function testTitle(c) {
   let newTitle = 'Labrador testing';
-  c.setData('mottoTitle', newTitle);
+  c.setState('mottoTitle', newTitle);
   assert(c.data.motto.text === newTitle);
 }
 

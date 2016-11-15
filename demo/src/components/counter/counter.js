@@ -18,9 +18,12 @@ export default class Counter extends Component {
   };
 
   //初始state数据
-  state = {
-    num: 0
-  };
+  constructor(props: $DataMap) {
+    super(props);
+    this.state = {
+      num: props.count * 2
+    };
+  }
 
   //监听props值的改变
   onUpdate(nextProps: $DataMap) {
@@ -32,7 +35,7 @@ export default class Counter extends Component {
 
   handleTap() {
     console.log('counter tap');
-    console.log('this.props',this.props);
+    console.log('this.props', this.props);
     let count = this.props.count + 1;
     if (this.props.onChange) {
       this.props.onChange(count);
