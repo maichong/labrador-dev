@@ -1,5 +1,4 @@
-<view class="item {{cls}}">
-  <view class="item-inner" catchtap="handleTap">
-    {{title}}
-  </view>
+<view class="item-block">
+  <text class="'item-text">id:{{id}},{{text}}</text>
+  <icon class="item-icon" catchtap="handleDelete" type="cancel" size="25"/>
 </view>

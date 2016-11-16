@@ -4,13 +4,18 @@
  * @author Li <li@maichong.it>
  */
 import {combineReducers} from 'redux';
-function redux(state = 'default',action){
-  if(action.type === 'ACTION_REDUX'){
-    return action.title;
+import {
+  LIST_ADD,
+  LIST_REMOVE
+} from '../utils/contracts';
+
+function list(state = [], action) {
+  console.log('------->>redux_list',action);
+  if (action.type === LIST_ADD || action.type === LIST_REMOVE) {
+    return action.list;
   }
   return state;
 }
-const reducer = combineReducers({
-  redux
-});
+
+const reducer = combineReducers({ list });
 export default reducer;

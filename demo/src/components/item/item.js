@@ -1,27 +1,25 @@
-// @flow
-
-import { Component, PropTypes } from 'labrador';
-
-const { func, string, bool } = PropTypes;
+/**
+ * @copyright Maichong Software Ltd. 2016 http://maichong.it
+ * @date 2016-11-16
+ * @author Li <li@maichong.it>
+ */
+import { Component } from 'labrador';
 
 export default class Item extends Component {
 
-  static propTypes = {
-    title: string,
-    isNew: bool,
-    onChange: func.isRequired
-  };
 
-  constructor(props: $DataMap) {
+  constructor(props) {
     super(props);
-    this.state = props || {};
+    this.state = props.item;
+
   }
 
-  onUpdate(props: $DataMap) {
-    this.setState(props);
+  onUpdate(props) {
+    console.log('----->>>compoennt>>item:', props);
+    this.setState({ ...props.item });
   }
 
-  handleTap() {
-    this.props.onChange(this.data.title + '.');
+  handleDelete() {
+    this.props.onChange();
   }
 }

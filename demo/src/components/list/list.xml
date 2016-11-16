@@ -1,4 +1,3 @@
-<view class="list">
-  <component key="title" name="title"/>
+<view class="list-block">
   <list key="items" name="item"/>
 </view>
