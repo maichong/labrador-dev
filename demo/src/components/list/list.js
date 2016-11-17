@@ -16,9 +16,17 @@ export default class List extends Component {
     list: array.isRequired
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: props.list
+    }
+  }
+
   children() {
+    let { list } = this.state;
     return {
-      items: this.props.list.map((item) => ({
+      items: list.map((item) => ({
         component: Item,
         key: item.id,
         props: {

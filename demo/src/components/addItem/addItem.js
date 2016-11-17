@@ -3,14 +3,19 @@
  * @date 2016-11-16
  * @author Li <li@maichong.it>
  */
-import {Component} from 'labrador';
+import { Component, PropTypes } from 'labrador';
 import * as action from '../../utils/action';
 
+const { string } = PropTypes;
 export default class AddItem extends Component {
-  constructor(props){
+  static propTypes = {
+    text: string
+  };
+
+  constructor(props) {
     super(props);
     this.state = {
-      text:''
+      text: ''
     };
   }
 
