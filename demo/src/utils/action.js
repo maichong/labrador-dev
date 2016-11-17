@@ -15,7 +15,7 @@ export function add(text) {
   let list = [].concat(store.getState().list);
   let id = 0;
   if (list.length > 0) {
-    id = list[list.length - 1].id;
+    id = list[list.length - 1].id+1;
   }
   let item = { id, text };
   list.push(item);
@@ -26,6 +26,7 @@ export function add(text) {
   })
 }
 export function remove(id){
+  console.log('remove id------->>>',id);
   let list =[].concat(store.getState().list);
   list.forEach((item,index) => {
     if(item.id === id){

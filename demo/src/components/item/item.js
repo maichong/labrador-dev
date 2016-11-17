@@ -6,11 +6,12 @@
 import { Component } from 'labrador';
 
 export default class Item extends Component {
-
-
   constructor(props) {
     super(props);
-    this.state = props.item;
+    this.state = {
+      id:'',
+      text:''
+    };
 
   }
 
@@ -20,6 +21,6 @@ export default class Item extends Component {
   }
 
   handleDelete() {
-    this.props.onChange();
+    this.props.onChange(this.state.id);
   }
 }

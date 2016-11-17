@@ -7,8 +7,12 @@ import {Component} from 'labrador';
 import * as action from '../../utils/action';
 
 export default class AddItem extends Component {
-
-  state = { text: '' };
+  constructor(props){
+    super(props);
+    this.state = {
+      text:''
+    };
+  }
 
   handleInput(e) {
     this.setState({ text: e.detail.value });
