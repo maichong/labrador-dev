@@ -3,14 +3,16 @@
  * @date 2016-11-17
  * @author Li <li@maichong.it>
  */
-import {Component} from 'labrador';
+import { Component, PropTypes } from 'labrador';
 
-export default class TestItem extends Component{
-  constructor(props){
+const { string } = PropTypes;
+export default class TestItem extends Component {
+  static propTypes = {
+    text: string
+  };
+
+  constructor(props) {
     super(props);
-    this.state = {text:''}
-  }
-  onUpdate(props){
-    this.setState({text:props.text});
+    this.state = { text: props.text }
   }
 }
