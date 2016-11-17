@@ -1,5 +1,4 @@
 <view>
   <component key="addItem" name="addItem"/>
   <component key="list" name="list"/>
-  <component key="test" name="TestList"/>
 </view>
