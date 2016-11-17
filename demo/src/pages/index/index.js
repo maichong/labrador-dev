@@ -2,6 +2,7 @@
 
 import { Component } from 'labrador';
 import List from '../../components/list/list';
+import TestList from '../../components/testList/testList';
 import AddItem from '../../components/addItem/addItem';
 import { connect } from 'labrador-redux';
 class Index extends Component {
@@ -13,8 +14,11 @@ class Index extends Component {
   }
 
   children() {
-    const { list } = this.state;
+    const {  list } = this.state;
     return {
+      test:{
+        component:TestList
+      },
       list: {
         component: List,
         props: { list }

@@ -1,0 +1,3 @@
+<view>
+  <list key="items" name="testItem"/>
+</view>
