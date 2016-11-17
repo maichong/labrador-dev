@@ -1,13 +1,16 @@
 // @flow
 
-import {Component} from 'labrador';
+import { Component } from 'labrador';
 import List from '../../components/list/list';
 import AddItem from '../../components/addItem/addItem';
-import {connect} from 'labrador-redux';
+import { connect } from 'labrador-redux';
 class Index extends Component {
-  state = {
-    list: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      list:[]
+    };
+  }
 
   children() {
     const { list } = this.state;
@@ -23,7 +26,7 @@ class Index extends Component {
   }
 
   onUpdate(props) {
-    console.log('------>>>props:',props);
+    console.log('------>>>props:', props);
     this.setState({ list: props.list });
   }
 }
