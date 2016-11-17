@@ -3,36 +3,34 @@
  * @date 2016-11-16
  * @author Li <li@maichong.it>
  */
-import { Component } from 'labrador';
+
+import { Component, PropTypes } from 'labrador';
 import Item from '../item/item';
 import * as action from '../../utils/action';
 
+const { array } = PropTypes;
+
 export default class List extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list:[]
-    };
-  }
-  
+
+  static propTypes = {
+    list: array.isRequired
+  };
+
   children() {
     return {
-      items: this.state.list.map((item) => ({
+      items: this.props.list.map((item) => ({
         component: Item,
-        key: item.id+new Date(),
+        key: item.id,
         props: {
-          item,
-          onChange: (id)=> {
-            console.log('id------->>',id);
-            action.remove(id)
-          }
+          id: item.id,
+          text: item.text,
+          onDelete: this.handleDelete
         }
       }))
-    }
+    };
   }
 
-  onUpdate(props) {
-    console.log('----->>component>>list:', props);
-    this.setState({ list: props.list });
+  handleDelete(id) {
+    action.remove(id);
   }
 }
