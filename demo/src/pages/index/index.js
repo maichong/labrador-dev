@@ -35,7 +35,6 @@ class Index extends Component {
 
   onUpdate(props) {
     this.setState({ list: props.list || [] });
-    this.setState({ test: props.list || [] });
   }
 }
 

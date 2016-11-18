@@ -19,7 +19,7 @@ export default class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: props.list
+      list: props.list || []
     }
   }
 
@@ -36,6 +36,10 @@ export default class List extends Component {
         }
       }))
     };
+  }
+
+  onUpdate(props) {
+    this.setState({ list: props.list });
   }
 
   handleDelete(id) {

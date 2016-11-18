@@ -30,6 +30,7 @@
     "labrador-test": "^0.5.1",
     "less": "^2.7.1",
     "redux": "^3.6.0",
-    "regenerator-runtime": "^0.9.6"
+    "regenerator-runtime": "^0.9.6",
+    "seamless-immutable": "^6.3.0"
   }
 }
