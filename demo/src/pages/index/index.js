@@ -1,6 +1,6 @@
 // @flow
 
-import { Component, PropTypes } from 'labrador';
+import { Component, PropTypes } from 'labrador-immutable';
 import { connect } from 'labrador-redux';
 import List from '../../components/list/list';
 import AddItem from '../../components/addItem/addItem';
@@ -8,6 +8,10 @@ import AddItem from '../../components/addItem/addItem';
 const { array } = PropTypes;
 
 class Index extends Component {
+
+  static defaultProps = {
+    list: []
+  };
 
   static propTypes = {
     list: array

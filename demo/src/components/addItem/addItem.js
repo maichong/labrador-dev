@@ -3,7 +3,7 @@
  * @date 2016-11-16
  * @author Li <li@maichong.it>
  */
-import { Component, PropTypes } from 'labrador';
+import { Component, PropTypes } from 'labrador-immutable';
 import * as action from '../../utils/action';
 
 const { string } = PropTypes;

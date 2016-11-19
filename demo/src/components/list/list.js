@@ -4,7 +4,7 @@
  * @author Li <li@maichong.it>
  */
 
-import { Component, PropTypes } from 'labrador';
+import { Component, PropTypes } from 'labrador-immutable';
 import Item from '../item/item';
 import * as action from '../../utils/action';
 

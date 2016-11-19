@@ -32,7 +32,7 @@ export default class Item extends Component {
   handleDelete() {
     //TODO immutable问题
     //测试代码 
-    let test = Immutable({id:'hello',text:'word'});
+    let test = Immutable({ id: 'hello', text: 'word' });
     test.id = '123';
     console.log(test);
     // this.props.onDelete(this.state.id);//真代码

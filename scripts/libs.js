@@ -10,5 +10,7 @@ module.exports = [
   'labrador-test',
   'labrador-redux',
   'labrador-immutable',
+  'labrador-demo',
+  'labrador-storage',
   'al-ui'
 ];

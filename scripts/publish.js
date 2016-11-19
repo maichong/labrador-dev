@@ -33,12 +33,6 @@ async.eachSeries(libs, (lib, callback) => {
     execSync(cmd, {
       stdio: 'inherit'
     });
-
-    cmd = `open http://registry.npm.taobao.org/update/${lib}`;
-    console.log(cmd.green);
-    execSync(cmd, {
-      stdio: 'inherit'
-    });
   }
 
   let cmd = `npm publish ${lib}`;
