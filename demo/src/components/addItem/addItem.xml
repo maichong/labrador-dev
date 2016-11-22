@@ -1,4 +1,0 @@
-<view class="add-block">
-  <input class="add-input" value="{{text}}" bindinput="handleInput"/>
-  <button class="add-btn" type="default" plain="true" catchtap="handleTap">添加</button>
-</view>

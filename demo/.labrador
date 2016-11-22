@@ -1,5 +1,12 @@
 {
+  "define":{
+    "API_ROOT":"http://localhost:5000/"
+  },
   "npmMap":{
+    "lodash.isplainobject":"lodash/isPlainObject",
+    "lodash.isstring":"lodash/isString",
+    "lodash.issymbol":"lodash/isSymbol",
+    "lodash-es":"lodash"
   },
   "uglify":{
     "mangle": [],
@@ -8,6 +15,15 @@
     }
   },
   "classNames": {
-    "for-test":true
+    "todo-finished":true,
+    "todo-finished-title":true
+  },
+  "env":{
+    "development": {},
+    "production": {
+      "define":{
+        "API_ROOT":"https://your.online.domain/"
+      }
+    }
   }
 }

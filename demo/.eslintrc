@@ -4,7 +4,10 @@
     "node": true
   },
   "globals": {
-    "__DEBUG__": true
+    "__DEV__": true,
+    "wx": true,
+    "getApp": true,
+    "getCurrentPages": true
   },
   "parser": "babel-eslint",
   "plugins": ["flowtype", "flowtype-errors"],
@@ -12,6 +15,7 @@
     "flowtype/define-flow-type": 1,
     "flowtype/use-flow-type": 1,
     "flowtype-errors/show-errors": 2,
+    "arrow-parens": [2, "always"],
     "prefer-const": 0,
     "prefer-template": 0,
     "no-param-reassign": 0,
