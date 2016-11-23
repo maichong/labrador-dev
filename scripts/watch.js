@@ -31,7 +31,7 @@ chokidar.watch(dirs, {
   if (utils.isFile(file)) {
     let relative = path.relative(dir, file);
     let target = modulesPath + relative;
-    console.log(`copy ${relative} -> demo/node_modules/${relative}`.green);
+    console.log(`copy ${relative} -> ${path.relative(process.cwd(), target)}`.green);
     fs.copySync(file, target);
   }
 });
