@@ -26,7 +26,7 @@ for (let file of files) {
 }
 
 chokidar.watch(dirs, {
-  ignored: /node_modules|[\/\\]\./
+  ignored: /node_modules|labrador-demo|labrador-cli|[\/\\]\./
 }).on('all', (event, file) => {
   if (utils.isFile(file)) {
     let relative = path.relative(dir, file);

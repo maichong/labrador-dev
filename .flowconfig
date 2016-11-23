@@ -7,7 +7,7 @@ demo/.*
 labrador-redux/.*
 
 [libs]
-demo/node_modules/labrador/flow
+labrador/flow
 
 [options]
 strip_root=true
