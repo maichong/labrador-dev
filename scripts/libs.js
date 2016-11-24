@@ -12,5 +12,6 @@ module.exports = [
   'labrador-immutable',
   'labrador-demo',
   'labrador-storage',
+  'labrador-upgrade',
   'al-ui'
 ];
